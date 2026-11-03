@@ -1,0 +1,29 @@
+{
+  "name": "linkhub-platform",
+  "version": "1.0.0",
+  "description": "LinkHub – Legal Social Chat, Gaming & Entertainment Platform",
+  "private": true,
+  "scripts": {
+    "start:backend": "cd backend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "start:web": "cd frontend && npm run web",
+    "start:android": "cd frontend && npm run android",
+    "build:web": "cd frontend && npm run build:web",
+    "test:backend": "cd backend && npm test"
+  },
+  "keywords": [
+    "linkhub",
+    "social",
+    "chat",
+    "gaming",
+    "entertainment",
+    "tools",
+    "temporary-messaging",
+    "expo",
+    "react-native",
+    "socketio",
+    "mysql"
+  ],
+  "author": "LinkHub Team",
+  "license": "MIT"
+}

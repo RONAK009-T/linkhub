@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: linkhub-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: linkhub_db
+      MYSQL_USER: linkhub
+      MYSQL_PASSWORD: linkhubpassword
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./database/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: linkhub-backend
+    restart: always
+    ports:
+      - '5000:5000'
+    environment:
+      PORT: 5000
+      NODE_ENV: production
+      JWT_SECRET: linkhub_production_jwt_super_secret_key_change_in_production_2026
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: linkhub
+      MYSQL_PASSWORD: linkhubpassword
+      MYSQL_DATABASE: linkhub_db
+      FRONTEND_URL: http://localhost:8081
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:

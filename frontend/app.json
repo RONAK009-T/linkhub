@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "LinkHub",
+    "slug": "linkhub",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "linkhub",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#090B10"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.linkhub.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#090B10"
+      },
+      "package": "com.linkhub.app",
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "VIBRATE"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png",
+      "meta": {
+        "themeColor": "#00F5A0",
+        "viewport": "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+      }
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "linkhub-social-platform"
+      },
+      "apiUrl": "http://localhost:5000",
+      "googleWebClientId": "",
+      "googleAndroidClientId": ""
+    }
+  }
+}

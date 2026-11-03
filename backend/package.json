@@ -1,0 +1,27 @@
+{
+  "name": "linkhub-backend",
+  "version": "1.0.0",
+  "description": "LinkHub Real-Time Backend API with Temporary Chat & Resource Directory",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node src/db/initDb.js",
+    "test": "node test/api.test.js"
+  },
+  "keywords": ["linkhub", "social", "chat", "temporary-chat", "socketio", "mysql", "express"],
+  "author": "LinkHub Team",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "google-auth-library": "^9.15.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.12.0",
+    "socket.io": "^4.8.1"
+  }
+}
